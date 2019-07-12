@@ -5,10 +5,12 @@ const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
 
-//messageOne.textContent = 'From JavaSript'
+
 
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault()//it stops clearing search form after submitting
+
+  messageOne.textContent = 'Loading.....'
 
   const location = search.value
 //fetch('http://localhost:3000/weather?address='+ location +'').then((response) => {
@@ -18,6 +20,7 @@ weatherForm.addEventListener('submit', (e) => {
         messageOne.textContent = data.error
         //console.log(data.error)
       } else {
+        
         messageOne.textContent = data.location
         messageTwo.textContent = data.forecast
           //console.log(data.location)
